@@ -16,11 +16,12 @@ public class Pizza {
 		this.maxNumberCells = maxNumberCells;
 		this.pizzaToppings = new char[cols][rows];
 	}
+	
 
 	@Override
 	public String toString() {
 		return "Pizza [pizzaToppings=" + Arrays.deepToString(pizzaToppings) + ", rows=" + rows + ", cols=" + cols
-				+ ", numberOfIngrediants=" + numberOfIngredients + ", maxNumberCells=" + maxNumberCells + "]";
+				+ ", numberOfIngredients=" + numberOfIngredients + ", maxNumberCells=" + maxNumberCells + "]";
 	}
 
 	
