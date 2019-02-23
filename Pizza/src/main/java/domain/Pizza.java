@@ -1,20 +1,29 @@
 package domain;
 
+import java.util.Arrays;
+
 public class Pizza {
-	protected char[][] pizzaToppings;
-	protected int rows;
-	protected int cols;
-	protected int numberOfIngrediants;
-	protected int maxNumberCells;
+	public char[][] pizzaToppings;
+	public int rows;
+	public int cols;
+	public int numberOfIngredients;
+	public int maxNumberCells;
 	
 	public Pizza(int row, int col, int numberOfIngredients, int maxNumberCells) {
 		this.rows = row;
 		this.cols = col;
-		this.numberOfIngrediants = numberOfIngredients;
+		this.numberOfIngredients = numberOfIngredients;
 		this.maxNumberCells = maxNumberCells;
-
+		this.pizzaToppings = new char[cols][rows];
 	}
 
+	@Override
+	public String toString() {
+		return "Pizza [pizzaToppings=" + Arrays.deepToString(pizzaToppings) + ", rows=" + rows + ", cols=" + cols
+				+ ", numberOfIngrediants=" + numberOfIngredients + ", maxNumberCells=" + maxNumberCells + "]";
+	}
+
+	
 	
 	
 	

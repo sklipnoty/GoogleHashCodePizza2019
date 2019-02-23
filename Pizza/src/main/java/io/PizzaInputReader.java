@@ -30,10 +30,13 @@ public class PizzaInputReader {
 	            Pizza pizza = new Pizza(row,col,numberOfIngredients, maxNumberCells);
 
 	            
-	            for(String line : lines) {
-	            	System.out.println(line);
+	            for(int i = 0; i < lines.size(); i++) {
+	            	for(int j = 0; j < lines.get(i).length(); j++) {
+	            		pizza.pizzaToppings[j][i] = lines.get(i).charAt(j); 
+	            	}
 	            }
 	            
+	            return pizza;
 	            
 	        }
 	        catch (IOException ex) {
