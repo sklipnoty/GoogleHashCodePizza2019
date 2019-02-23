@@ -18,6 +18,18 @@ public class PizzaInputReader {
 	            Path absolutePath = path.toAbsolutePath();
 	            List<String> lines = Files.readAllLines(absolutePath);
 	            
+	            
+	            String[] constraints = lines.get(0).split(" ");
+	            lines.remove(0);
+	            
+	            int row = Integer.valueOf(constraints[0]);
+	            int col = Integer.valueOf(constraints[1]);
+	            int numberOfIngredients = Integer.valueOf(constraints[2]);
+	            int maxNumberCells = Integer.valueOf(constraints[3]);
+	            
+	            Pizza pizza = new Pizza(row,col,numberOfIngredients, maxNumberCells);
+
+	            
 	            for(String line : lines) {
 	            	System.out.println(line);
 	            }
