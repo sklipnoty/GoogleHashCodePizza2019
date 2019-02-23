@@ -9,6 +9,12 @@ public class Slice {
 		this.pizza = pizza;
 	}
 	
+	public Slice(Pizza p, Coordinate start, Coordinate end) {
+		this.pizza = pizza;
+		this.start = start;
+		this.end = end;
+	}
+
 	public int getSize() {
 		int x = (end.x - start.x) + 1;
 		int y = (end.y - start.y) + 1;

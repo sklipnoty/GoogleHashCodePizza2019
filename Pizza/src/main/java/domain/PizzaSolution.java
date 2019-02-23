@@ -2,6 +2,7 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class PizzaSolution {
 	public Pizza pizza;
@@ -27,8 +28,8 @@ public class PizzaSolution {
 				List<Slice> slices = giveValidSlices(new Coordinate(i, j));
 				
 				if(slices.size() > 0 ) {
-					System.out.println("Adding to the pizza	" + slices.get(0));
-					currentSlices.add(slices.get(0));
+					Random random = new Random();
+					currentSlices.add(slices.get(random.nextInt(slices.size())));
 				}
 			}
 		}
@@ -51,9 +52,7 @@ public class PizzaSolution {
 				semiValidSlices.add(slice);
 			}
 		}
-		
-		System.out.println("Found semi valid " + semiValidSlices.size());
-		
+				
 		if(currentSlices.size() == 0) {
 			return semiValidSlices;
 		}
