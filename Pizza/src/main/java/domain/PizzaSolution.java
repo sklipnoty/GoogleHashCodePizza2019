@@ -22,9 +22,8 @@ public class PizzaSolution {
 	 */
 	public void slicePizza() {
 		
-		for(int i = 0 ; i < pizza.rows; i++) {
-			for(int j = 0; j < pizza.cols; j++) {
-				
+		for(int i = 0 ; i < pizza.rows+1; i++) {
+			for(int j = 0; j < pizza.cols+1; j++) {
 				List<Slice> slices = giveValidSlices(new Coordinate(i, j));
 				
 				if(slices.size() > 0 ) {
