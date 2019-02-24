@@ -15,6 +15,9 @@ public class Coordinate {
 		return "Coordinate [x=" + x + ", y=" + y + "]";
 	}
 	
+	public String solutionToString() {
+		return y + " " + x + " ";
+	}
 	
 	
 }

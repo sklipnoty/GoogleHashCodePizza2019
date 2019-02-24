@@ -22,16 +22,44 @@ public class PizzaSolution {
 	 */
 	public void slicePizza() {
 		
-		for(int i = 0 ; i < pizza.rows+1; i++) {
-			for(int j = 0; j < pizza.cols+1; j++) {
-				List<Slice> slices = giveValidSlices(new Coordinate(i, j));
-				
-				if(slices.size() > 0 ) {
-					Random random = new Random();
-					currentSlices.add(slices.get(random.nextInt(slices.size())));
+		int score = -1;
+		int currentScore = 0;
+		List<Slice> bestSolution = null;
+		
+		for(int p = 0; p < 100; p++) {
+			System.out.println("Starting iteration : " +p);
+		
+			for(int i = 0 ; i < pizza.rows+1; i++) {
+				for(int j = 0; j < pizza.cols+1; j++) {
+					List<Slice> slices = giveValidSlices(new Coordinate(i, j));
+					
+					if(slices.size() > 0 ) {
+						Random random = new Random();
+						currentSlices.add(slices.get(random.nextInt(slices.size())));
+					}
 				}
 			}
+			
+			for(Slice slice : currentSlices) {
+				score += slice.getSize();
+			}
+			
+			if(score > currentScore) {
+				bestSolution = new ArrayList<>();
+				for(int i = 0; i < currentSlices.size(); i++) {
+					bestSolution.add(new Slice(pizza, currentSlices.get(i).start,currentSlices.get(i).end));
+				}
+				currentScore = score;
+				score = 0;
+				System.out.println(" New best solution " + currentScore + " " + bestSolution.size());
+				currentSlices = new ArrayList<>();
+			}
+			
+			currentSlices = bestSolution;
+		
 		}
+		
+		
 		
 		
 	}

@@ -25,19 +25,19 @@ public class Pizza {
 	}
 
 	public boolean hasOverlap(Slice slice1, Slice slice2) {
-		System.out.println(slice1);
-		System.out.println(slice2);
+		//System.out.println(slice1);
+		//System.out.println(slice2);
 		
 		if(slice1.start.x > slice2.end.x || slice2.start.x > slice1.end.x) {
-			System.out.println("false");
+			//System.out.println("false");
 			return false;
 		}
 		if(slice1.start.y > slice2.end.y || slice2.start.y > slice1.end.y) {
-			System.out.println("false");
+			//System.out.println("false");
 			return false;
 		}
 
-		System.out.println("true");
+		//System.out.println("true");
 		
 		return true;
 	}
